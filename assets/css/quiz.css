@@ -13,19 +13,21 @@ span.hide{
 }
 
 .sport_leisure{
-    color: gold
+    color: gold;
+    text-shadow: blue 2px 2px 2px;
 }
 
 .film_tv{
-    color:darkolivegreen
+    color:darkolivegreen;
 }
 
 .arts_literature{
-    color: darkcyan
+    color: darkcyan;
 }
 
 .history{
     color: yellow;
+    text-shadow: black 1px 1px 1px;
 }
 
 .society_culture{
@@ -33,11 +35,11 @@ span.hide{
 }
 
 .science{
-    color: red
+    color: red;
 }
 
 .geography{
-    color: darkgreen
+    color: darkgreen;
 }
 
 .food_drink{
@@ -49,5 +51,5 @@ span.hide{
 }
 
 .unknown{
-    color: gray
+    color: gray;
 }
