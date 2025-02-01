@@ -27,10 +27,10 @@ function fetchData() {
 
         output += "<h2>" + fixCategory(thisCategory) + ': ';
         output += data[i].difficulty + '</h2>';
-        output += data[i].question.text + '<br>\n';
-        output += "<strong>" + data[i].correctAnswer + '</strong><br>\n';
+        output += "<h3>" + data[i].question.text + '</h3>\n';
+        output += "<input type='radio' name='" +  data[i].id + "' value='true'> <strong>" + data[i].correctAnswer + '</strong><br>\n';
         for (let y = 0; y < data[i].incorrectAnswers.length; y++) {    
-            output += data[i].incorrectAnswers[y] + '<br>\n';
+            output += "<input type='radio' name='" +  data[i].id + "' value='false'> " + data[i].incorrectAnswers[y] + '<br>\n';
         }
         output += "<span class='hide'>" + data[i].id + '</span><hr>\n';
     }
