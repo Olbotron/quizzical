@@ -7,3 +7,47 @@
 span.hide{
     display: none;
 }
+
+.music{
+    color:crimson;
+}
+
+.sport_leisure{
+    color: gold
+}
+
+.film_tv{
+    color:darkolivegreen
+}
+
+.arts_literature{
+    color: darkcyan
+}
+
+.history{
+    color: yellow;
+}
+
+.society_culture{
+    color: purple;
+}
+
+.science{
+    color: red
+}
+
+.geography{
+    color: darkgreen
+}
+
+.food_drink{
+    color: brown;
+}
+
+.general_knowledge{
+    color: darkblue;
+}
+
+.unknown{
+    color: gray
+}

@@ -17,15 +17,13 @@ function fetchData() {
   
   // Function that processes the JSON data
   function processData(data) {
-    console.log('Processing JSON data:');
-    //console.log(jsonData);
+    console.log('Processing JSON data:')
     let output = '';
 
     for(let i = 0; i < data.length; i++){
         thisCategory = data[i].category.replace(/_/g, ' ');
-        //thisCategory = thisCategory.charAt(0).toUpperCase() + thisCategory.slice(1);
 
-        output += "<h2>" + fixCategory(thisCategory) + ': ';
+        output += fixCategory(thisCategory) + ': ';
         output += data[i].difficulty + '</h2>';
         output += "<h3>" + data[i].question.text + '</h3>\n';
         output += "<input type='radio' name='" +  data[i].id + "' value='true'> <strong>" + data[i].correctAnswer + '</strong><br>\n';
@@ -40,31 +38,29 @@ function fetchData() {
 
 //Deal with category names with underscores and tv in lowercase
 function fixCategory(categoryName){
-    //let capsCategory = capitalizeCategory(categoryName);
-    //return capsCategory.replace(/_/g, ' ');
     switch(categoryName){        
         case "music":
-            return "Music";
+            return "<h2 class='music'>Music";
         case "sport and leisure":
-            return "Sport and Leisure";
+            return "<h2 class='sport_leisure'>Sport and Leisure";
         case "film and tv":
-            return "Film and TV";
+            return "<h2 class='film_tv'>Film and TV";
         case "arts and literature":
-            return "Arts and Literature";
+            return "<h2 class='arts_literature'>Arts and Literature";
         case "history":
-            return "History";
+            return "<h2 class='history'>History";
         case "society and culture":
-            return "Society and Culture";
+            return "<h2 class='society_culture'>Society and Culture";
         case "science":
-            return "Science";
+            return "<h2 class='science'>Science";
         case "geography":
-            return "Geography";
+            return "<h2 class='geography'>Geography";
         case "food and drink":
-            return "Food and Drink";
+            return "<h2 class='food_drink'>Food and Drink";
         case "general knowledge":
-            return "General Knowledge";
+            return "<h2 class='general_knowledge'>General Knowledge";
         default:
-            return "Unknown";
+            return "<h2 class='unknown'>Unknown";
     }
 }
 
