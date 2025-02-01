@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizzard of Oz</title>
+    <link rel="stylesheet" href="assets/css/quiz.css">
+
+</head>
+<body>
+<h1>Quizzers Ready!</h1>
+<div class="quiz-container">
+    <div id="quiz">
+        <form id="quizForm">
+            <div class="question">
+                <p id="question"></p>
+                <div class="answers" id="answers">
+                    <label>
+                        <input type="radio" name="answer" id="answer1" value="0">
+                        <span id="answer1"></span>
+                    </label>
+                    <label>
+                        <input type="radio" name="answer" id="answer2" value="1">
+                        <span id="answer2"></span>
+                    </label>
+                    <label>
+                        <input type="radio" name="answer" id="answer3" value="2">
+                        <span id="answer3"></span>
+                    </label>
+                    <label>
+                        <input type="radio" name="answer" id="answer4" value="3">
+                        <span id="answer4"></span>
+                    </label>
+                </div>
+            </div>
+            <button type="submit" id="submit">Check</button>
+        </form>
+        <div id="newQuizForm" style="width: 80vw; height: 80vh;"></div>
+    </div>
+</div>
+<script src="assets/js/quiz.js"></script>
+</body>
+</html>
