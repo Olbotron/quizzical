@@ -1,46 +1,6 @@
 // URL of the API endpoint
 const url = 'https://the-trivia-api.com/v2/questions/';
 
-//async function to fetch data from the API
-function fetchJSON() {
-    fetch(url)
-        .then((res) => {
-            if (!res.ok) {
-                throw new Error
-                    (`HTTP error! Status: ${res.status}`);
-            }
-            return res.json();
-        })
-        .then((data) => {   
-            return data;
-        })
-        .catch((error) =>
-            console.error("Unable to fetch data:", error));
-}
-// const getQuestions = fetchJSON();
-// console.table(getQuestions);
-
-// function processQuestions(data) {
-//         console.log(data);
-//         let output = '';
-
-//         for(let i = 0; i < data.length; i++){
-//             output += "<h2>" + data[i].category + '<h2>';
-//             output += data[i].difficulty + '<br>';
-//             output += data[i].question.text + '<br>\n';
-//             output += "<strong>" + data[i].correctAnswer + '</strong><br>\n';
-//             for (let y = 0; y < data[i].incorrectAnswers.length; y++) {    
-//                 output += data[i].incorrectAnswers[y] + '<br>\n';
-//             }
-//             output += data[i].id + '<hr>\n';
-//         }
-//     console.log(output);
-// }
-// let myQuestions = processQuestions(tenQuestions);
-
-// console.table(myQuestions);
-
-
 // Function that fetches JSON data from an API
 function fetchData() {
     return fetch(url)
@@ -65,22 +25,59 @@ function fetchData() {
         thisCategory = data[i].category.replace(/_/g, ' ');
         //thisCategory = thisCategory.charAt(0).toUpperCase() + thisCategory.slice(1);
 
-        output += "<h2>" + thisCategory + '</h2>';
-        output += data[i].difficulty + '<br>';
+        output += "<h2>" + fixCategory(thisCategory) + ': ';
+        output += data[i].difficulty + '</h2>';
         output += data[i].question.text + '<br>\n';
         output += "<strong>" + data[i].correctAnswer + '</strong><br>\n';
         for (let y = 0; y < data[i].incorrectAnswers.length; y++) {    
             output += data[i].incorrectAnswers[y] + '<br>\n';
         }
-        output += data[i].id + '<hr>\n';
-    
+        output += "<span class='hide'>" + data[i].id + '</span><hr>\n';
     }
     
     document.getElementById("newQuizForm").innerHTML = output;
 }
-  
-  // Fetch the data and then pass it to processData function
-  fetchData().then(jsonData => processData(jsonData)).catch(error => {
+
+//Deal with category names with underscores and tv in lowercase
+function fixCategory(categoryName){
+    //let capsCategory = capitalizeCategory(categoryName);
+    //return capsCategory.replace(/_/g, ' ');
+    switch(categoryName){        
+        case "music":
+            return "Music";
+        case "sport and leisure":
+            return "Sport and Leisure";
+        case "film and tv":
+            return "Film and TV";
+        case "arts and literature":
+            return "Arts and Literature";
+        case "history":
+            return "History";
+        case "society and culture":
+            return "Society and Culture";
+        case "science":
+            return "Science";
+        case "geography":
+            return "Geography";
+        case "food and drink":
+            return "Food and Drink";
+        case "general knowledge":
+            return "General Knowledge";
+        default:
+            return "Unknown";
+    }
+}
+
+function capitalizeCategory(category) {
+    if (typeof category !== 'string' || category.length === 0) {
+      return '';
+    }
+    
+    return category.charAt(0).toUpperCase() + category.slice(1).toLowerCase();
+}  
+
+// Fetch the data and then pass it to processData function
+fetchData().then(jsonData => processData(jsonData)).catch(error => {
     console.error('There has been a problem with your fetch operation:', error);
-  });
+});
   
