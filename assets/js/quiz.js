@@ -1,5 +1,5 @@
 // URL of the API endpoint
-const url = 'https://the-trivia-api.com/v2/questions/';
+const url = 'https://the-trivia-api.com/v2/questions?byCategory=music&limit=2'; //'https://the-trivia-api.com/api/questions?categories=music&region=GB&difficulty=easy&tags=rock';//
 
 // Function that fetches JSON data from an API
 function fetchData() {
@@ -23,17 +23,22 @@ function fetchData() {
     for(let i = 0; i < data.length; i++){
         thisCategory = data[i].category.replace(/_/g, ' ');
 
-        output += fixCategory(thisCategory) + ': ';
+        output += "<div class='question'><h2>" + fixCategory(thisCategory) + ': ';
         output += data[i].difficulty + '</h2>';
         output += "<h3>" + data[i].question.text + '</h3>\n';
         output += "<input type='radio' name='" +  data[i].id + "' value='true'> <strong>" + data[i].correctAnswer + '</strong><br>\n';
         for (let y = 0; y < data[i].incorrectAnswers.length; y++) {    
             output += "<input type='radio' name='" +  data[i].id + "' value='false'> " + data[i].incorrectAnswers[y] + '<br>\n';
         }
-        output += "<span class='hide'>" + data[i].id + '</span><hr>\n';
+        output += "<span class='hide'>" + data[i].id + '</span></div>\n';
     }
     
     document.getElementById("newQuizForm").innerHTML = output;
+}
+
+function shuffleAnswers() {
+    for (let i = 0; i < data.length; i++) {
+        }
 }
 
 //Deal with category names with underscores and tv in lowercase
