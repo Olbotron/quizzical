@@ -1,5 +1,5 @@
 // URL of the API endpoint
-const url = 'https://the-trivia-api.com/v2/questions?byCategory=music&limit=2'; //'https://the-trivia-api.com/api/questions?categories=music&region=GB&difficulty=easy&tags=rock';//
+const url = 'https://the-trivia-api.com/v2/questions?byCategory=music&limit=10'; //'https://the-trivia-api.com/api/questions?categories=music&region=GB&difficulty=easy&tags=rock';//
 
 // Function that fetches JSON data from an API
 function fetchData() {
