@@ -35,7 +35,7 @@ function fetchData() {
         answerArray.push(`<input type='radio' name='${data[i].id}' value='true'> <strong>${data[i].correctAnswer}</strong><br>\n`);
 
         for (let y = 0; y < data[i].incorrectAnswers.length; y++) {    
-            answerArray.push(`<input type='radio' name='"${data[i].id}' value='false'> ${data[i].incorrectAnswers[y]}<br>\n`);
+            answerArray.push(`<input type='radio' name='${data[i].id}' value='false'> ${data[i].incorrectAnswers[y]}<br>\n`);
         }
 
         //Shuffle the answers (sure this could be done in less lines)
