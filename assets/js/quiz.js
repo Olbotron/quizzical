@@ -39,9 +39,7 @@ function fetchData() {
         }
 
         //Shuffle the answers (sure this could be done in less lines)
-        newArray = shuffleAnswers(answerArray);
-        newArray = newArray.toString().split(',').join('');
-        output += newArray;
+        output += shuffleAnswers(answerArray);
 
         //Add the answers to the output
         //Hide the question ID in a span with no display styling
@@ -63,7 +61,7 @@ function shuffleAnswers(unshuffledArray) {
         [unshuffledArray[i], unshuffledArray[j]] = [unshuffledArray[j], unshuffledArray[i]];
     }
 
-    shuffledArray = unshuffledArray;
+    let shuffledArray = unshuffledArray.toString().split(',').join('');
     return shuffledArray;
 }
 
