@@ -21,24 +21,50 @@ function fetchData() {
     let output = '';
 
     for(let i = 0; i < data.length; i++){
+        //Build the question
         thisCategory = data[i].category.replace(/_/g, ' ');
 
         output += "<div class='question'><h2>" + fixCategory(thisCategory) + ': ';
         output += data[i].difficulty + '</h2>';
+
+
         output += "<h3>" + data[i].question.text + '</h3>\n';
-        output += "<input type='radio' name='" +  data[i].id + "' value='true'> <strong>" + data[i].correctAnswer + '</strong><br>\n';
+
+        //Build the answers
+        let answerArray = [];
+        answerArray.push(`<input type='radio' name='${data[i].id}' value='true'> <strong>${data[i].correctAnswer}</strong><br>\n`);
+
         for (let y = 0; y < data[i].incorrectAnswers.length; y++) {    
-            output += "<input type='radio' name='" +  data[i].id + "' value='false'> " + data[i].incorrectAnswers[y] + '<br>\n';
+            answerArray.push(`<input type='radio' name='"${data[i].id}' value='false'> ${data[i].incorrectAnswers[y]}<br>\n`);
         }
+
+        //Shuffle the answers (sure this could be done in less lines)
+        newArray = shuffleAnswers(answerArray);
+        newArray = newArray.toString().split(',').join('');
+        output += newArray;
+
+        //Add the answers to the output
+        //Hide the question ID in a span with no display styling
         output += "<span class='hide'>" + data[i].id + '</span></div>\n';
     }
     
     document.getElementById("newQuizForm").innerHTML = output;
 }
 
-function shuffleAnswers() {
-    for (let i = 0; i < data.length; i++) {
-        }
+function shuffleAnswers(unshuffledArray) {
+
+    // Iterate over the array in reverse order
+    for (let i = unshuffledArray.length - 1; i > 0; i--) {
+
+        // Generate Random Index
+        const j = Math.floor(Math.random() * (i + 1));
+
+        // Swap elements
+        [unshuffledArray[i], unshuffledArray[j]] = [unshuffledArray[j], unshuffledArray[i]];
+    }
+
+    shuffledArray = unshuffledArray;
+    return shuffledArray;
 }
 
 //Deal with category names with underscores and tv in lowercase
