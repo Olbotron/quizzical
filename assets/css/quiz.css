@@ -2,14 +2,16 @@ body{
     background-color: black;
 }
 
-header{
+.hero{width: 100%;}
+
+/* header{
     background-image: url("../images/quizzard.webp");
     min-height: 35vh;
     max-height: 90vh;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-}
+} */
 
 #newQuizForm{
     margin: auto auto;

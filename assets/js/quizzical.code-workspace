@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../.."
+		}
+	],
+	"settings": {
+		"workbench.colorTheme": "Visual Studio Dark",
+		"terminal.integrated.gpuAcceleration": "canvas"
+	}
+}

@@ -38,6 +38,9 @@ function fetchData() {
             answerArray.push(`<input type='radio' name='${data[i].id}' value='false'> ${data[i].incorrectAnswers[y]}<br>\n`);
         }
 
+        ////Replace comma with another character to avoid splitting the answers
+        //answerArray = answerArray.toString().split(',').join('^');
+
         //Shuffle the answers (sure this could be done in less lines)
         output += shuffleAnswers(answerArray);
 

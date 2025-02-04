@@ -1,0 +1,7 @@
+https://the-trivia-api.com/docs/
+
+https://the-trivia-api.com/api/questions?categories=music&limit=5&region=GB&difficulty=easy&tags=1980's,1990's,1970's,1960's,2000's,2010's,2022
+
+All questions taken in good faith from the-trivia-app.com for educational non-commercial use. Any queries regarding the answers should be directed to <a href="the-trivia-api.com">the-trivia-api.com</a>
+
+https://the-trivia-api.com/api/questions?categories=arts_and_literature&limit=5&region=GB&difficulty=medium&tags=ancient_greece,arts_and_literature,comics,academy_awards
