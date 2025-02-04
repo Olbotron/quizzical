@@ -20,7 +20,8 @@ body{
 .hero{width: 100%;}
 
 #newQuizForm{
-    margin: auto auto;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .container{
@@ -40,15 +41,16 @@ body{
     font-weight: bold;
     letter-spacing: 2px;
     text-wrap: wrap;
-    width: 50%;
+    min-width: 50%;
+    max-width: 94%;
 }
 
-.incorrect:hover{
+.incorrect:hover, .incorrect:focus{
     background-color: var(--incorrect);
     color: white;
 }
 
-.correct:hover{
+.correct:hover, .correct:focus{
     background-color: var(--correct);
     color: white;
 }
@@ -65,7 +67,7 @@ span.hide{
 }
 
 .category{
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: bold;
     font-family: var(--wiz);
     color: var(--secondary);
