@@ -54,13 +54,6 @@ body{
     background-color: var(--correct);
     color: white;
 }
-/*
-div.questionDiv{
-    padding: 310px;
-    border: 1px solid var(--dark);
-    border-radius: 10px;
-    background-color: var(--pale);
-}*/
 
 span.hide{
     display: none;
