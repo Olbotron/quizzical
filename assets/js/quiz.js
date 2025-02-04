@@ -32,10 +32,9 @@ function fetchData() {
 
         //Build the answers
         let answerArray = [];
-        answerArray.push(`<input type='radio' name='${data[i].id}' value='true'> <strong>${data[i].correctAnswer}</strong><br>\n`);
-
+        answerArray.push(`<input type='button' class="btnAnswer correct" id="${data[i].correctAnswer}" name='${data[i].id}' value='${data[i].correctAnswer}'></label><br>\n`);
         for (let y = 0; y < data[i].incorrectAnswers.length; y++) {    
-            answerArray.push(`<input type='radio' name='${data[i].id}' value='false'> ${data[i].incorrectAnswers[y]}<br>\n`);
+            answerArray.push(`<input type='button' class="btnAnswer incorrect" id="${data[i].incorrectAnswers[y]}" name='${data[i].id}' value='${data[i].incorrectAnswers[y]}'><br>`);
         }
 
         ////Replace comma with another character to avoid splitting the answers
@@ -72,27 +71,27 @@ function shuffleAnswers(unshuffledArray) {
 function fixCategory(categoryName){
     switch(categoryName){        
         case "music":
-            return "<h2 class='music'>Music";
+            return "<h2 class='category music'>Music";
         case "sport and leisure":
-            return "<h2 class='sport_leisure'>Sport and Leisure";
+            return "<h2 class='category sport_leisure'>Sport and Leisure";
         case "film and tv":
-            return "<h2 class='film_tv'>Film and TV";
+            return "<h2 class='category film_tv'>Film and TV";
         case "arts and literature":
-            return "<h2 class='arts_literature'>Arts and Literature";
+            return "<h2 class='category arts_literature'>Arts and Literature";
         case "history":
-            return "<h2 class='history'>History";
+            return "<h2 class='category history'>History";
         case "society and culture":
-            return "<h2 class='society_culture'>Society and Culture";
+            return "<h2 class='category society_culture'>Society and Culture";
         case "science":
-            return "<h2 class='science'>Science";
+            return "<h2 class='category science'>Science";
         case "geography":
-            return "<h2 class='geography'>Geography";
+            return "<h2 class='category geography'>Geography";
         case "food and drink":
-            return "<h2 class='food_drink'>Food and Drink";
+            return "<h2 class='category food_drink'>Food and Drink";
         case "general knowledge":
-            return "<h2 class='general_knowledge'>General Knowledge";
+            return "<h2 class='category general_knowledge'>General Knowledge";
         default:
-            return "<h2 class='unknown'>Unknown";
+            return "<h2 class='category unknown'>Unknown";
     }
 }
 

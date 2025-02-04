@@ -1,34 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Henny+Penny&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+:root {
+    --dark: #4289C1; /* = Dark */
+    --primary: #7EBEFA; /* = Primary */
+    --pale: #D6F4FF; /* = Pale  */
+    --secondary: #E39E21; /* = Secondary */
+    --correct: green; /* = Correct */
+    --incorrect: red; /* = Incorrect */
+    --wiz: "Henny Penny", serif;
+    --plain: "Nunito", sans-serif;
+}
+
 body{
-    background-color: black;
+    background-color: var(--pale);
+    font-size: 1.5em;
 }
 
 .hero{width: 100%;}
-
-/* header{
-    background-image: url("../images/quizzard.webp");
-    min-height: 35vh;
-    max-height: 90vh;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-} */
 
 #newQuizForm{
     margin: auto auto;
 }
 
-div.question{
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid black;
-    border-radius: 10px;
-    background-color: #f0f0f0;
+.container{
+    border-color: var(--dark);
+    border-style: ridge;
+    border-width: 4px;
 }
+
+.btnAnswer{
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--dark);
+    border-radius: 10px;
+    background-color: var(--primary);
+    font-size: 0.8em;
+    font-family: var(--plain);
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-wrap: wrap;
+    width: 50%;
+}
+
+.incorrect:hover{
+    background-color: var(--incorrect);
+    color: white;
+}
+
+.correct:hover{
+    background-color: var(--correct);
+    color: white;
+}
+/*
+div.questionDiv{
+    padding: 310px;
+    border: 1px solid var(--dark);
+    border-radius: 10px;
+    background-color: var(--pale);
+}*/
 
 span.hide{
     display: none;
 }
 
+.category{
+    font-size: 2em;
+    font-weight: bold;
+    font-family: var(--wiz);
+    color: var(--secondary);
+    letter-spacing: 2px;
+    margin-top: 40px;
+}
+
+/*
 .music{
     color:crimson;
 }
@@ -74,3 +119,4 @@ span.hide{
 .unknown{
     color: gray;
 }
+*/
